@@ -1,6 +1,7 @@
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.MainPage;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -22,6 +23,14 @@ public class LoginTest extends ConfigFrontend {
         assertTrue(logo.isDisplayed());
         assertTrue(getStartedTopBar.isDisplayed());
         assertTrue(getStartedMain.isDisplayed());
+
+    }
+
+    @Test
+    public void testMainPage(){
+        driver.get(baseUrl);
+        MainPage mainPage = MainPage(driver);
+        mainPage.isContentPage();
 
     }
 
