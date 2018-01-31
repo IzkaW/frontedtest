@@ -1,9 +1,7 @@
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import pages.DataTest;
-import pages.LoginPage;
-import pages.MainPage;
+import pages.*;
 
 import static junit.framework.TestCase.assertTrue;
 
@@ -46,10 +44,10 @@ public class LoginTest extends ConfigFrontend {
         mainPage = new MainPage(driver);
         mainPage.loginButton.click();
         loginPage = new LoginPage(driver);
-        loginPage.usernameInput.sendKeys(DataTest.userLogin);
+        loginPage.usernameInput.sendKeys(DataTest.username);
         loginPage.buttoncontinue.click();
         passwordPage = new PasswordPage(driver);
-        passwordPage.passwordInput.sendKeys(DataTest.userPassword);
+        passwordPage.passwordInput.sendKeys(DataTest.userpassword);
         passwordPage.buttonLogIn.click();
         mainLoginPage = new MainLoginPage(driver);
         mainLoginPage.isContentPage();

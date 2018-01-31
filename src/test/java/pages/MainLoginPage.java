@@ -5,23 +5,21 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage{
+public class MainLoginPage extends BasePage{
 
     WebDriver driver;
 
-    public LoginPage(WebDriver driver){
+    public MainLoginPage(WebDriver driver){
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+    @FindBy(id = "search-component-1")
 
-    @FindBy(id = "usernameOrEmail")
-    public WebElement usernameInput;
+    public WebElement isContentPage;
 
-    @FindBy(css = ".button.form-button.is-primary")
-    public WebElement buttoncontinue;
-
-
-
+    public boolean isContentPage(){
+        return true;
+    }
 
 }
