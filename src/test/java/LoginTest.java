@@ -6,7 +6,11 @@ public class LoginTest extends ConfigFrontend {
     @Test
     public void firstFrontendTest(){
         driver.get(baseUrl);
-        driver.findElement(By.cssSelector("div.page-root div.hp-hero__wrapper p span"));
+        driver.findElement(By.cssSelector(".hp-hero__wrapper .no-widows"));
+        driver.findElement(By.xpath("//*[@id=\"navbar-login-link\"]"));
+        driver.findElement(By.id("wpcom-logo"));
+        driver.findElement(By.className("menu-signup"));
+        driver.findElement(By.cssSelector("div.hp-hero__wrapper")).findElement(By.className("button"));
     }
 
 }

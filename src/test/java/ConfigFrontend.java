@@ -40,6 +40,7 @@ public class ConfigFrontend {
     }
     @After
     public void tearDown(){
+
         String verificationErrorsString = verificationErrors.toString();
         if (!"".equals(verificationErrorsString)){
             fail(verificationErrorsString);
