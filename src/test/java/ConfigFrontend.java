@@ -8,10 +8,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.fail;
+
 public class ConfigFrontend {
 
     public WebDriver driver = null;
     public String baseUrl;
+    private StringBuffer verificationErrors = new StringBuffer();
+
     //Before Class musi byc jako static
     @BeforeClass
     public static void setupClass(){
@@ -24,7 +28,7 @@ public class ConfigFrontend {
 
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--start-maximized");
-        baseUrl = DataTest,baseUrl;
+        baseUrl = DataTest.baseUrl;
 
         if (driver == null){
             driver = new ChromeDriver();
@@ -36,7 +40,12 @@ public class ConfigFrontend {
     }
     @After
     public void tearDown(){
-        driver.quit();
+        String verificationErrorsString = verificationErrors.toString();
+        if (!"".equals(verificationErrorsString)){
+            fail(verificationErrorsString);
+            driver.quit();
+        }
+
         driver.close();
         driver = null;
     }
