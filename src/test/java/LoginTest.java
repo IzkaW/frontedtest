@@ -39,7 +39,7 @@ public class LoginTest extends ConfigFrontend {
     }
 
     @Test
-    public void loginTest(){
+    public void loginTest() throws InterruptedException {
         driver.get(baseUrl);
         mainPage = new MainPage(driver);
         mainPage.loginButton.click();
@@ -51,7 +51,8 @@ public class LoginTest extends ConfigFrontend {
         passwordPage.buttonLogIn.click();
         mainLoginPage = new MainLoginPage(driver);
         mainLoginPage.isContentPage();
-
+        Thread.sleep(3000);
+        passwordPage.webWait(passwordPage.passwordInput,15);
     }
 
 
