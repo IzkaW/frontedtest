@@ -1,11 +1,17 @@
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import pages.DataTest;
+import pages.LoginPage;
 import pages.MainPage;
 
 import static junit.framework.TestCase.assertTrue;
 
 public class LoginTest extends ConfigFrontend {
+    MainPage mainPage;
+    LoginPage loginPage;
+    PasswordPage passwordPage;
+    MainLoginPage mainLoginPage;
 
     @Test
     public void firstFrontendTest(){
@@ -29,9 +35,26 @@ public class LoginTest extends ConfigFrontend {
     @Test
     public void testMainPage(){
         driver.get(baseUrl);
-        MainPage mainPage = MainPage(driver);
+        mainPage = new MainPage(driver);
         mainPage.isContentPage();
 
     }
+
+    @Test
+    public void loginTest(){
+        driver.get(baseUrl);
+        mainPage = new MainPage(driver);
+        mainPage.loginButton.click();
+        loginPage = new LoginPage(driver);
+        loginPage.usernameInput.sendKeys(DataTest.userLogin);
+        loginPage.buttoncontinue.click();
+        passwordPage = new PasswordPage(driver);
+        passwordPage.passwordInput.sendKeys(DataTest.userPassword);
+        passwordPage.buttonLogIn.click();
+        mainLoginPage = new MainLoginPage(driver);
+        mainLoginPage.isContentPage();
+
+    }
+
 
 }
