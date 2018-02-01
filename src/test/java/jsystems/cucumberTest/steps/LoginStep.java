@@ -5,9 +5,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import jsystems.cucumberTest.ConfigSteps;
-import jsystems.cucumberTest.pages.LoginPage;
-import jsystems.cucumberTest.pages.MainPage;
-import jsystems.cucumberTest.pages.PasswordPage;
+import jsystems.cucumberTest.pages.*;
 import org.openqa.selenium.WebDriver;
 import pages.DataTest;
 
@@ -21,6 +19,9 @@ public class LoginStep {
 
     LoginPage loginPage;
     PasswordPage passwordPage;
+
+    MainPersonalPage mainPersonalPage;
+    PersonalPage personalPage;
 
     public LoginStep(ConfigSteps configSteps){
         try {
@@ -82,19 +83,21 @@ public class LoginStep {
     @Then("^User is on main login page$")
     public void userIsOnMainLoginPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-
+    mainPersonalPage = new MainPersonalPage(driver);
        // throw new PendingException();
     }
 
     @When("^User press avatar$")
     public void userPressAvatar() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        mainPersonalPage.avatar.click();
        // throw new PendingException();
     }
 
     @Then("^User is on personal page$")
     public void userIsOnPersonalPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+
        // throw new PendingException();
     }
 
