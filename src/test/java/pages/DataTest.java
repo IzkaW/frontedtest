@@ -10,6 +10,7 @@ public class DataTest {
     public static String username = "IzkaW";
 
     public static String userpassword = "IzkaW123456IzkaW";
+
     public static String mojastrona = "Streams";
 
 }
