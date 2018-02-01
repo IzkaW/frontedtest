@@ -33,8 +33,8 @@ public class LoginStep {
         }
     }
 
-    @Given("^User jest na wordpress website \"(.*)\"$")
-    public void UserJestNaWordpressWebsite(String website){
+    @Given("^User jest na wordpress website \"([^\"]*)\"$")
+    public void UserJestNaWordpressWebsite(String website)throws Throwable {
         driver.get(website);
         mainPage = new MainPage(driver);
         assertTrue(mainPage.logIn.isDisplayed());
