@@ -15,4 +15,6 @@ public class PersonalPage {
 
     public WebElement saveProfileDetailsButton = driver.findElement(By.cssSelector(".button.form-button.is-primary"));
 
+    public WebElement notification = driver.findElement(By.xpath("//*[@id=\"secondary\"]/ul/li[1]/ul/li[5]/a"));
+
 }

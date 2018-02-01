@@ -9,6 +9,7 @@ import jsystems.cucumberTest.pages.*;
 import org.openqa.selenium.WebDriver;
 import pages.DataTest;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class LoginStep {
@@ -22,6 +23,7 @@ public class LoginStep {
 
     MainPersonalPage mainPersonalPage;
     PersonalPage personalPage;
+    NotificationPage notificationPage;
 
     public LoginStep(ConfigSteps configSteps){
         try {
@@ -97,31 +99,38 @@ public class LoginStep {
     @Then("^User is on personal page$")
     public void userIsOnPersonalPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
-
+        personalPage = new PersonalPage(driver);
+        assertTrue(personalPage.notification.isDisplayed());
+        assertFalse(personalPage.saveProfileDetailsButton.isEnabled());
        // throw new PendingException();
     }
 
     @When("^User clicks notification link$")
     public void userClicksNotificationLink() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        personalPage.notification.click();
        // throw new PendingException();
     }
 
     @Then("^User is on notification page$")
     public void userIsOnNotificationPage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        notificationPage = new NotificationPage(driver);
+        assertTrue(notificationPage.firstCheckbox.isSelected());
        // throw new PendingException();
     }
 
     @When("^User clicks checkbox$")
     public void userClicksCheckbox() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        notificationPage.firstCheckbox.click();
        // throw new PendingException();
     }
 
     @Then("^Checkbox is unselected$")
     public void checkboxIsUnselected() throws Throwable {
         // Write code here that turns the phrase above into concrete actions
+        assertFalse(notificationPage.firstCheckbox.isSelected());
        // throw new PendingException();
     }
 }
