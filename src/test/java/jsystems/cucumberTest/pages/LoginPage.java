@@ -5,11 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage {
-    WebDriver driver;
+public class LoginPage extends HelperPage{
+    //WebDriver driver;
 
         public LoginPage(WebDriver driver){
-            this.driver = driver;
+            super(driver);
         }
 
         public WebElement usernameInput = driver.findElement(By.id("usernameOrEmail"));

@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import static org.junit.Assert.assertTrue;
 
 
-public class MainPage {
-    WebDriver driver;
+public class MainPage extends HelperPage{
+   // WebDriver driver;
     public MainPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
     public String title = driver.getTitle();

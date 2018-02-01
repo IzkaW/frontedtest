@@ -5,12 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PasswordPage {
+public class PasswordPage extends HelperPage {
 
-    WebDriver driver;
+   // WebDriver driver;
 
     public PasswordPage(WebDriver driver){
-        this.driver = driver;
+       super(driver);
     }
 
         public WebElement passwordInput = driver.findElement(By.id("password"));

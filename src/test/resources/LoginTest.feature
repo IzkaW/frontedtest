@@ -2,7 +2,7 @@ Feature: Test login page
 
   @Login @Notification
   Scenario: Sprawdz czy uzytkownik sie zalogowal
-    Given User jest na wordpresswebsite "http://wordpress.com/"
+    Given User jest na wordpress website "http://wordpress.com/"
     When User clicks to login button
     Then User is on first login page
     When User enter login and press <Continue>

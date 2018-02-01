@@ -4,12 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PersonalPage {
+public class PersonalPage extends HelperPage{
 
-    WebDriver driver;
+    //WebDriver driver;
 
     public PersonalPage(WebDriver driver){
-        this.driver = driver;
+        super(driver);
     }
 
 
