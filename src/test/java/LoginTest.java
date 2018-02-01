@@ -47,12 +47,17 @@ public class LoginTest extends ConfigFrontend {
         loginPage.usernameInput.sendKeys(DataTest.username);
         loginPage.buttoncontinue.click();
         passwordPage = new PasswordPage(driver);
+
+        passwordPage.webWait(passwordPage.passwordInput,15);
         passwordPage.passwordInput.sendKeys(DataTest.userpassword);
+        passwordPage.webWait(passwordPage.buttonLogIn,15);
         passwordPage.buttonLogIn.click();
+
+//        passwordPage.webWait(passwordPage.buttonLogIn,15);
         mainLoginPage = new MainLoginPage(driver);
         mainLoginPage.isContentPage();
-        Thread.sleep(3000);
-        passwordPage.webWait(passwordPage.passwordInput,15);
+
+
     }
 
 

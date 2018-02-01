@@ -17,7 +17,7 @@ public class PasswordPage extends BasePage{
     @FindBy(id = "password")
     public WebElement passwordInput;
 
-    @FindBy(css = ".button.form-button.is-primary")
+    @FindBy(xpath = "//*[@id=\"primary\"]/div/main/div/div[1]/div/form/div[1]/div[2]/button")
     public WebElement buttonLogIn;
 
 }
